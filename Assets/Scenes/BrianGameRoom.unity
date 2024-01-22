@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 49037859}
   - component: {fileID: 49037858}
   m_Layer: 5
-  m_Name: screenUI_02
+  m_Name: screenUI_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 529703147}
   - component: {fileID: 529703146}
   m_Layer: 5
-  m_Name: screenUI_00
+  m_Name: screenUI_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,7 +1755,7 @@ GameObject:
   - component: {fileID: 845107648}
   - component: {fileID: 845107647}
   m_Layer: 5
-  m_Name: screenUI_06
+  m_Name: screenUI_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6801,7 +6801,7 @@ GameObject:
   - component: {fileID: 928635853}
   - component: {fileID: 928635852}
   m_Layer: 5
-  m_Name: screenUI_07
+  m_Name: screenUI_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6903,7 +6903,7 @@ GameObject:
   - component: {fileID: 947868592}
   - component: {fileID: 947868591}
   m_Layer: 5
-  m_Name: screenUI_03
+  m_Name: screenUI_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7381,7 +7381,7 @@ GameObject:
   - component: {fileID: 1344746288}
   - component: {fileID: 1344746287}
   m_Layer: 5
-  m_Name: screenUI_09
+  m_Name: screenUI_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7670,7 +7670,7 @@ GameObject:
   - component: {fileID: 1486007877}
   - component: {fileID: 1486007876}
   m_Layer: 5
-  m_Name: screenUI_01
+  m_Name: screenUI_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
