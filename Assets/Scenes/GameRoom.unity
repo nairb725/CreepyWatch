@@ -7347,6 +7347,10 @@ MonoBehaviour:
   m_TimerText: {fileID: 167218606}
   TimerCountMax: 300
   _isTimer: 1
+  GreenScreen: {fileID: 1589434913}
+  RedScreen: {fileID: 1641021379}
+  BlueScreen: {fileID: 1689370863}
+  YellowScreen: {fileID: 454951752}
 --- !u!4 &1007286837
 Transform:
   m_ObjectHideFlags: 0
