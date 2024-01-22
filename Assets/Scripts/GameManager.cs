@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
     {
         AnomalyTime -= Time.deltaTime;
         float seconds = AnomalyTime % 60;
-        Debug.Log(seconds);
         if (seconds <= 0)
         {
             _isTimer = false;
