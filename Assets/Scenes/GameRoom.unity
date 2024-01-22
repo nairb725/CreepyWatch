@@ -1795,6 +1795,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: yellow_button
       objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007286836}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 454951752}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8817136184085306311, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
@@ -1864,6 +1896,38 @@ PrefabInstance:
     - target: {fileID: 4080643777705915246, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_Name
       value: red_button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007286836}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1641021379}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8817136184085306311, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_LocalScale.y
@@ -2142,7 +2206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRight: 0
-  period: 15
   integers: 00000000b4000000
 --- !u!1 &868863034
 GameObject:
@@ -7346,9 +7409,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f0ee4ee77d50847b6d6908f7c8c81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameover: {fileID: 0}
+  grade: {fileID: 0}
   m_TimerText: {fileID: 167218606}
   TimerCountMax: 300
   _isTimer: 1
+  GreenScreen: {fileID: 1589434913}
+  RedScreen: {fileID: 1641021379}
+  BlueScreen: {fileID: 1689370863}
+  YellowScreen: {fileID: 454951752}
 --- !u!4 &1007286837
 Transform:
   m_ObjectHideFlags: 0
@@ -13710,6 +13779,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: blue_button
       objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007286836}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1689370863}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8817136184085306311, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.1
@@ -14153,6 +14254,38 @@ PrefabInstance:
     - target: {fileID: 4080643777705915246, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_Name
       value: green_button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007286836}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1589434913}
+    - target: {fileID: 5701602387413720026, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8817136184085306311, guid: b63f7e3a86c44514a988ca92ca7714fa, type: 3}
       propertyPath: m_LocalScale.y
