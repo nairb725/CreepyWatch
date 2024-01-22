@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private float _startTime;
     private bool CausedByEvent;
     private bool AnomalyOccuring = false;
-    private float AnomalyTime = 0.0f;
+    private float AnomalyTime = 5.0f;
 
     [SerializeField]
     private Canvas gameover;
@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
             {
                 AnomalyTimer();
             }
+            else
+            {
+                AnomalyTime = 5.0f;
+            }
         }
         if (TimeLeft <= 0) 
         { 
@@ -60,13 +64,10 @@ public class GameManager : MonoBehaviour
 
     void AnomalyTimer()
     {
-        AnomalyTime += Time.deltaTime;
+        AnomalyTime -= Time.deltaTime;
         float seconds = AnomalyTime % 60;
-        if (!AnomalyOccuring)
-        {
-            return;
-        }
-        if (seconds >= 5) 
+        Debug.Log(seconds);
+        if (seconds <= 0)
         {
             _isTimer = false;
             GameOver();
