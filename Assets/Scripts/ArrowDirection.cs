@@ -9,23 +9,20 @@ public class ArrowDirection : MonoBehaviour
 
     private RectTransform rt;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    private int[] integers;
+
     void Start()
     {
-        rt = GetComponent<RectTransform>();
 
+        integers[0] = 180;
+        integers[1] = 0;
+        rt = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ArrowPointing()
     {
-        if (_isRight == true)
-        {
-
-        }
-        else
-        {
-            rt.Rotate(new Vector3(0, 0, 180));
-        }
+        var direction = integers[Random.Range(0, 2)];
+        rt.Rotate(Vector3.up, direction);
     }
 }

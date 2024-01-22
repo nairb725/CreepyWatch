@@ -34,15 +34,12 @@ public class Temperature : MonoBehaviour
         {
             yield return new WaitForSeconds(0.05f);
             float number = Random.Range(0f, 100f);
-            Debug.Log(number);
             if (number <= 1)
             {
-                Debug.Log("UP " + number);
                 UpdateTemperature(1);
             }
             else if (number > 1 && number <= 2)
             {
-                Debug.Log("DOWN " + number);
                 UpdateTemperature(-1);
             }
         }

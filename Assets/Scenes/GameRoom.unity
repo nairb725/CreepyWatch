@@ -2134,6 +2134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRight: 0
+  period: 15
+  integers: 00000000b4000000
 --- !u!1 &868863034
 GameObject:
   m_ObjectHideFlags: 0
