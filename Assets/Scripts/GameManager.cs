@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         float delay = Random.Range(10, 20);
         int EventID = Random.Range(1, 8);
         CausedByEvent = true;
-        AnomalyOccuring = true;
+
         switch (EventID)
         {
             case 1:
@@ -135,9 +135,10 @@ public class GameManager : MonoBehaviour
 
     public void ToggleScreen(GameObject screen)
     {
-        if (screen.activeSelf && CausedByEvent)
+        if (screen.activeSelf)
         {
             screen.gameObject.SetActive(false);
+            AnomalyOccuring = true;
         }
         else if (!CausedByEvent)
         {
