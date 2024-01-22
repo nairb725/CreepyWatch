@@ -9,14 +9,11 @@ public class MenuButtonController : MonoBehaviour
 
     public void Load()
     {
-        Debug.Log("start");
         SceneManager.LoadScene("GameRoom");
     }
 
     public void Leave()
     {
-        Debug.Log("leave");
-
         Application.Quit();
     }
 }
