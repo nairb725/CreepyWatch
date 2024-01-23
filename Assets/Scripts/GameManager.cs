@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     private float AnomalyTime = 5.0f;
 
     [SerializeField]
-    private Canvas gameover;
+    private Canvas GameoverCanvas;
 
     [SerializeField]
-    private TextMeshPro grade;
+    private Canvas WinCanvas;
+
+    [SerializeField]
+    private TMP_Text Grade;
 
     [SerializeField]
     private TMP_Text m_TimerText;
@@ -83,8 +86,25 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("GameOVER");
-        gameover.gameObject.SetActive(true);
+        if(TimeLeft < 0)
+        {
+            WinCanvas.gameObject.SetActive(true);
+        } else if (TimeLeft > 0) {
+            if (TimeLeft > 0 && TimeLeft < 1)
+            {
+                Grade.text = string.Format("A");
+            } else if(TimeLeft > 1 && TimeLeft < 2)
+            {
+                Grade.text = string.Format("B");
+            } else if(TimeLeft > 2 && TimeLeft < 3)
+            {
+                Grade.text = string.Format("C");
+            } else if (TimeLeft > 3 && TimeLeft < 5)
+            {
+                Grade.text = string.Format("D");
+            }
+            GameoverCanvas.gameObject.SetActive(true);
+        }
     }
 
     void RandomEvent()
