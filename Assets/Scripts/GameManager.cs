@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private float _startTime;
     private bool CausedByEvent;
     private bool AnomalyOccuring = false;
+    private bool TempAnomalyOccuring = false;
     private float AnomalyTime = 5.0f;
 
     [SerializeField]
@@ -33,9 +34,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject GreenScreen, RedScreen, BlueScreen, YellowScreen;
 
+    private Temperature _temperature;
+
     void Start()
     {
         _startTime = Time.time;
+        _temperature = GameObject.FindObjectOfType<Temperature>();
         TimeLeft = TimerCountMax;
         Invoke("RandomEvent", Random.Range(5, 10));
     }
@@ -49,7 +53,7 @@ public class GameManager : MonoBehaviour
 
             UpdateTimerText();
 
-            if (AnomalyOccuring)
+            if (AnomalyOccuring || TempAnomalyOccuring)
             {
                 AnomalyTimer();
             }
@@ -58,11 +62,12 @@ public class GameManager : MonoBehaviour
                 AnomalyTime = 5.0f;
             }
         }
-        if (TimeLeft <= 0) 
-        { 
+        if (TimeLeft <= 0)
+        {
             _isTimer = false;
             GameOver();
         }
+        CheckTemp(_temperature.temperature);
     }
 
     void AnomalyTimer()
@@ -86,20 +91,25 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        if(TimeLeft <= 0)
+        if (TimeLeft <= 0)
         {
             WinCanvas.gameObject.SetActive(true);
-        } else if (TimeLeft > 0) {
+        }
+        else if (TimeLeft > 0)
+        {
             if (TimeLeft > 0 && TimeLeft < 1 * 60)
             {
                 Grade.text = "A";
-            } else if(TimeLeft > 1 * 60 && TimeLeft < 2 * 60)
+            }
+            else if (TimeLeft > 1 * 60 && TimeLeft < 2 * 60)
             {
                 Grade.text = "B";
-            } else if(TimeLeft > 2 * 60 && TimeLeft < 3*60)
+            }
+            else if (TimeLeft > 2 * 60 && TimeLeft < 3 * 60)
             {
                 Grade.text = "C";
-            } else if (TimeLeft > 3 * 60 && TimeLeft < 5 * 60)
+            }
+            else if (TimeLeft > 3 * 60 && TimeLeft < 5 * 60)
             {
                 Grade.text = "D";
             }
@@ -163,6 +173,18 @@ public class GameManager : MonoBehaviour
         {
             screen.gameObject.SetActive(true);
             AnomalyOccuring = false;
+        }
+    }
+
+    public void CheckTemp(float temp)
+    {
+        if (temp <= 40f || temp >= 70f)
+        {
+            TempAnomalyOccuring = true;
+        }
+        else if (temp > 40f || temp < 70f)
+        {
+            TempAnomalyOccuring = false;
         }
     }
 }
