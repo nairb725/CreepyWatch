@@ -149,7 +149,10 @@ public class GameManager : MonoBehaviour
                 break;
         }
         CausedByEvent = false;
-        Invoke("RandomEvent", delay);
+        if(_isTimer && TimeLeft > 0)
+        {
+            Invoke("RandomEvent", delay);
+        }
     }
 
     public void ToggleScreen(GameObject screen)
