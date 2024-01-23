@@ -434,18 +434,6 @@ PrefabInstance:
       value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2424292604930676624, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424292604930676624, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424292604930676624, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424292604930676624, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -493,33 +481,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4040423816603892680, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4040423816603892680, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_ReferencePixelsPerUnit
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6332738515892938820, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1971580396}
-    - target: {fileID: 6332738515892938820, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_RenderMode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7585278129228149747, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
       propertyPath: m_Name
       value: LoseCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7585278129228149747, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011750981091931000, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
-      propertyPath: m_text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -902,10 +870,6 @@ PrefabInstance:
     - target: {fileID: 4544952225753211241, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
       propertyPath: m_Name
       value: WinCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544952225753211241, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7660582860855555703, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
       propertyPath: m_Pivot.x
