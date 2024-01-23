@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        if(TimeLeft < 0)
+        if(TimeLeft <= 0)
         {
             WinCanvas.gameObject.SetActive(true);
         } else if (TimeLeft > 0) {

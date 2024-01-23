@@ -1804,6 +1804,11 @@ RectTransform:
   m_AnchoredPosition: {x: -8.01, y: 8.48}
   m_SizeDelta: {x: 4, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &683591125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7585278129228149747, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
+  m_PrefabInstance: {fileID: 105837890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &686603168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8332,6 +8337,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371170117}
   m_CullTransparentMesh: 1
+--- !u!1 &1377484072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4544952225753211241, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
+  m_PrefabInstance: {fileID: 198507201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1417909512
 GameObject:
   m_ObjectHideFlags: 0
@@ -13605,6 +13615,7 @@ GameObject:
   - component: {fileID: 1570333402}
   - component: {fileID: 1570333401}
   - component: {fileID: 1570333403}
+  - component: {fileID: 1570333404}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -13819,6 +13830,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1570333404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570333400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345594e04f31c81428d0ddbb0032e263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseCanvas: {fileID: 683591125}
+  winCanvas: {fileID: 1377484072}
 --- !u!1 &1589434913
 GameObject:
   m_ObjectHideFlags: 0
