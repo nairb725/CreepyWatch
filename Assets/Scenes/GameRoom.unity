@@ -7628,6 +7628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f0ee4ee77d50847b6d6908f7c8c81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TempAnomalyOccuring: 0
   GameoverCanvas: {fileID: 1780253294}
   WinCanvas: {fileID: 876270497}
   Grade: {fileID: 714498498}
@@ -7638,6 +7639,7 @@ MonoBehaviour:
   RedScreen: {fileID: 1641021379}
   BlueScreen: {fileID: 1689370863}
   YellowScreen: {fileID: 454951752}
+  _temperature: {fileID: 1092262426}
 --- !u!4 &1007286837
 Transform:
   m_ObjectHideFlags: 0
@@ -7671,7 +7673,7 @@ GameObject:
   - component: {fileID: 1092262424}
   - component: {fileID: 1092262426}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Temperature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7806,6 +7808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Temperature: 55
+  gameManager: {fileID: 1007286836}
 --- !u!1 &1118692269
 GameObject:
   m_ObjectHideFlags: 0
@@ -15339,6 +15342,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007286836}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleTempAnomaly
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534219158282512250, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: onButtonDown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3472488572271307571, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
       propertyPath: m_Name
       value: Push_Button
@@ -15428,29 +15463,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8393880469432900973, guid: 4f930e8228ada214da2c206e678b4a12, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7503721343561040871}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f930e8228ada214da2c206e678b4a12, type: 3}
---- !u!1 &7503721343561040870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8393880469432900973, guid: 4f930e8228ada214da2c206e678b4a12, type: 3}
-  m_PrefabInstance: {fileID: 7503721343561040869}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7503721343561040871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7503721343561040870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc4a3a690f0a1f4fbac94b9eef4fd9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TempText: {fileID: 1092262422}
 --- !u!1001 &8560601838580367493
 PrefabInstance:
   m_ObjectHideFlags: 0
