@@ -154,41 +154,41 @@ public class GameManager : MonoBehaviour
             case 1:
                 Debug.Log("called event 1 : green screen Off");
                 ToggleScreen(GreenScreen);
-                TextInfoDead.text = "You didn't press the green button in time";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton vert à temps";
                 break;
 
             case 2:
                 Debug.Log("called event 1 : red screen Off");
                 ToggleScreen(RedScreen);
-                TextInfoDead.text = "You didn't press the red button in time";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton rouge à temps";
                 break;
 
             case 3:
                 Debug.Log("called event 1 : blue screen Off");
                 ToggleScreen(BlueScreen);
-                TextInfoDead.text = "You didn't press the blue button in time";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton bleu à temps";
                 break;
             case 4:
                 Debug.Log("called event 1 : yellow screen Off");
                 ToggleScreen(YellowScreen);
-                TextInfoDead.text = "You didn't press the yellow button in time";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton jaune à temps";
                 break;
             case 5:
                 Debug.Log("called event 5 : cold");
                 ToggleTempAnomaly(Random.Range(-33, -7));
-                TextInfoDead.text = "You push didn't push the button to reset the tempeture";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 6:
                 Debug.Log("called event 6 : heat");
                 ToggleTempAnomaly(Random.Range(90, 120));
-                TextInfoDead.text = "You push didn't push the button to reset the tempeture";
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 8:
         Debug.Log("called event 8 : arrow");
-                TextInfoDead.text = "You didn't switch the stick to the opposite side of the arrow";
+                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
                 break;
             case 9:
-                Debug.Log("called event 9 : nothing");
+                Debug.Log("called event 9 : rien");
                 break;
         }
         CausedByEvent = false;
