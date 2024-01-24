@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Temperature _temperature;
 
+    [SerializeField]
+    public ArrowDirection _arrowDirection;
+
+    [SerializeField]
+    public StickDirection stickDirection;
+
     void Start()
     {
         _startTime = Time.time;
@@ -45,6 +51,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(stickDirection._isRight);
+        Debug.Log(_arrowDirection._isRight);
+
         if (_isTimer && TimeLeft > 0)
         {
             TimeLeft = Mathf.Clamp(TimerCountMax - (Time.time - _startTime), 0f, TimerCountMax);
@@ -166,7 +175,11 @@ public class GameManager : MonoBehaviour
                 Debug.Log("called event 6 : heat");
                 ToggleTempAnomaly(Random.Range(90, 120));
                 break;
-            case 7:
+            case 8:
+                
+                Debug.Log("called event 7 : arrow");
+                break;
+            case 9:
                 Debug.Log("called event 7 : nothing");
                 break;
         }
