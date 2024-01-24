@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     private float _startTime, TimeLeft;
     private bool CausedByEvent;
-    private int AnomalyOccuring = 0;
+    public int AnomalyOccuring = 0;
     public bool TempAnomalyOccuring = false;
     public float AnomalyTime = 5.0f;
 
