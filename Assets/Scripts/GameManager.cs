@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public TMP_Text TextInfoDead;
 
+    [SerializeField] private AudioSource randomSound;
+
+    [SerializeField] private AudioClip[] audioSources;
+
     void Start()
     {
         WinCanvas.gameObject.SetActive(false);
@@ -146,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     void RandomEvent()
     {
+        RandomSound();
         float delay = Random.Range(10, 15);
         int EventID = Random.Range(7, 9);
         CausedByEvent = true;
@@ -251,5 +256,12 @@ public class GameManager : MonoBehaviour
         {
             TempAnomalyOccuring = false;
         }
+    }
+
+    void RandomSound()
+    {
+        Debug.Log("azeaze");
+        randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
+        randomSound.Play();
     }
 }
