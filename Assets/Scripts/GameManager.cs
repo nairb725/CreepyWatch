@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
             }
             GameoverCanvas.gameObject.SetActive(true);
         }
+        m_TimerText.text = "";
         StartCoroutine(SwitchScene(3f));
     }
 
