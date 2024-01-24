@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowDirection : MonoBehaviour
 {
     [SerializeField]
-    private bool _isRight = false;
+    public bool _isRight;
 
     private RectTransform rt;
 
@@ -14,7 +14,6 @@ public class ArrowDirection : MonoBehaviour
 
     void Start()
     {
-
         integers[0] = 180;
         integers[1] = 0;
         rt = GetComponent<RectTransform>();
@@ -24,5 +23,13 @@ public class ArrowDirection : MonoBehaviour
     {
         var direction = integers[Random.Range(0, 2)];
         rt.Rotate(Vector3.up, direction);
+        if(rt.transform.localRotation.y == 0)
+        {
+            _isRight = true;
+        }
+        else
+        {
+            _isRight = false;
+        }   
     }
 }

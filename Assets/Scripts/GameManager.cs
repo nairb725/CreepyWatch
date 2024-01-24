@@ -4,20 +4,18 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.Windows.Speech;
 using Valve.VR.InteractionSystem.Sample;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float _startTime;
+    private float _startTime, TimeLeft;
     private bool CausedByEvent;
     private int AnomalyOccuring = 0;
     public bool TempAnomalyOccuring = false;
-    private float AnomalyTime = 5.0f;
+    public float AnomalyTime = 5.0f;
 
     [SerializeField]
-    private Canvas GameoverCanvas;
-
-    [SerializeField]
-    private Canvas WinCanvas;
+    private Canvas WinCanvas, GameoverCanvas;
 
     [SerializeField]
     private TextMeshProUGUI Grade;
@@ -28,7 +26,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float TimerCountMax;
 
-    private float TimeLeft;
     [SerializeField]
     private bool _isTimer = true;
 
@@ -38,8 +35,19 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Temperature _temperature;
 
+    [SerializeField]
+    public ArrowDirection _arrowDirection;
+
+    [SerializeField]
+    public StickDirection stickDirection;
+
+    [SerializeField]
+    public TMP_Text TextInfoDead;
+
     void Start()
     {
+        WinCanvas.gameObject.SetActive(false);
+        GameoverCanvas.gameObject.SetActive(false);
         _startTime = Time.time;
         TimeLeft = TimerCountMax;
         Invoke("RandomEvent", Random.Range(5, 10));
@@ -55,6 +63,11 @@ public class GameManager : MonoBehaviour
             UpdateTimerText();
 
             CheckTemp(_temperature.m_Temperature);
+
+            if (AnomalyOccuring < 0)
+            {
+                AnomalyOccuring = 0;
+            }
 
             if (AnomalyOccuring > 0)
             {
@@ -111,12 +124,23 @@ public class GameManager : MonoBehaviour
             {
                 Grade.text = "C";
             }
-            else if (TimeLeft > 3 * 60 && TimeLeft < 5 * 60)
+            else if (TimeLeft > 3 * 60 && TimeLeft < 4 * 60)
             {
                 Grade.text = "D";
             }
+            else if (TimeLeft > 4 * 60 && TimeLeft < 5 * 60)
+            {
+                Grade.text = "F";
+            }
             GameoverCanvas.gameObject.SetActive(true);
         }
+        StartCoroutine(SwitchScene(3f));
+    }
+
+    IEnumerator SwitchScene(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        SceneManager.LoadScene("main");
     }
 
     void RandomEvent()
@@ -124,65 +148,46 @@ public class GameManager : MonoBehaviour
         float delay = Random.Range(10, 15);
         int EventID = Random.Range(1, 7);
         CausedByEvent = true;
-
         switch (EventID)
         {
             case 1:
-                if (CheckScreen(GreenScreen))
-                {
-                    Debug.Log("called event 1 : green screen Off");
-                    ToggleScreen(GreenScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-                
+                Debug.Log("called event 1 : green screen Off");
+                ToggleScreen(GreenScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton vert à temps";
+                break;
+
             case 2:
-                if (CheckScreen(RedScreen))
-                {
-                    Debug.Log("called event 2 : red screen Off");
-                    ToggleScreen(RedScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-                    
+                Debug.Log("called event 1 : red screen Off");
+                ToggleScreen(RedScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton rouge à temps";
+                break;
+
             case 3:
-                if (CheckScreen(BlueScreen))
-                {
-                    Debug.Log("called event 2 : blue screen Off");
-                    ToggleScreen(BlueScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                Debug.Log("called event 1 : blue screen Off");
+                ToggleScreen(BlueScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton bleu à temps";
+                break;
             case 4:
-                if (CheckScreen(YellowScreen))
-                {
-                    Debug.Log("called event 2 : yellow screen Off");
-                    ToggleScreen(YellowScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                Debug.Log("called event 1 : yellow screen Off");
+                ToggleScreen(YellowScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton jaune à temps";
+                break;
             case 5:
                 Debug.Log("called event 5 : cold");
                 ToggleTempAnomaly(Random.Range(-33, -7));
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 6:
                 Debug.Log("called event 6 : heat");
                 ToggleTempAnomaly(Random.Range(90, 120));
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
-            case 7:
-                Debug.Log("called event 7 : nothing");
+            case 8:
+        Debug.Log("called event 8 : arrow");
+                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
+                break;
+            case 9:
+                Debug.Log("called event 9 : rien");
                 break;
         }
         CausedByEvent = false;
@@ -206,34 +211,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool CheckScreen(GameObject screen)
-    {
-        if (screen == GreenScreen)
-        {
-            return GreenScreen.activeSelf;
-        }
-        else if (screen == RedScreen)
-        {
-            return RedScreen.activeSelf;
-        }
-        else if (screen == BlueScreen)
-        {
-            return BlueScreen.activeSelf;
-        }
-        else
-        {
-            return YellowScreen.activeSelf;
-        }
-    }
-
     public void ToggleTempAnomaly(float temp)
     {
-        if (TempAnomalyOccuring == false && CausedByEvent)
+        if (!TempAnomalyOccuring && CausedByEvent)
         {
             _temperature.m_Temperature = temp;
             AnomalyOccuring += 1;
         }
-        else
+        else if (TempAnomalyOccuring)
         {
             _temperature.m_Temperature = temp;
             AnomalyOccuring -= 1;
