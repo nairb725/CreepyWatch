@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public StickDirection stickDirection;
 
+    [SerializeField]
+    public TMP_Text TextInfoDead;
+
     void Start()
     {
         _startTime = Time.time;
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(stickDirection._isRight);
+        Debug.Log(stickDirection._isRight);
         Debug.Log(_arrowDirection._isRight);
 
         if (_isTimer && TimeLeft > 0)
@@ -146,41 +149,46 @@ public class GameManager : MonoBehaviour
         float delay = Random.Range(10, 15);
         int EventID = Random.Range(1, 7);
         CausedByEvent = true;
-
         switch (EventID)
         {
             case 1:
                 Debug.Log("called event 1 : green screen Off");
                 ToggleScreen(GreenScreen);
+                TextInfoDead.text = "You didn't press the green button in time";
                 break;
 
             case 2:
                 Debug.Log("called event 1 : red screen Off");
                 ToggleScreen(RedScreen);
+                TextInfoDead.text = "You didn't press the red button in time";
                 break;
 
             case 3:
                 Debug.Log("called event 1 : blue screen Off");
                 ToggleScreen(BlueScreen);
+                TextInfoDead.text = "You didn't press the blue button in time";
                 break;
             case 4:
                 Debug.Log("called event 1 : yellow screen Off");
                 ToggleScreen(YellowScreen);
+                TextInfoDead.text = "You didn't press the yellow button in time";
                 break;
             case 5:
                 Debug.Log("called event 5 : cold");
                 ToggleTempAnomaly(Random.Range(-33, -7));
+                TextInfoDead.text = "You push didn't push the button to reset the tempeture";
                 break;
             case 6:
                 Debug.Log("called event 6 : heat");
                 ToggleTempAnomaly(Random.Range(90, 120));
+                TextInfoDead.text = "You push didn't push the button to reset the tempeture";
                 break;
             case 8:
-                
-                Debug.Log("called event 7 : arrow");
+        Debug.Log("called event 8 : arrow");
+                TextInfoDead.text = "You didn't switch the stick to the opposite side of the arrow";
                 break;
             case 9:
-                Debug.Log("called event 7 : nothing");
+                Debug.Log("called event 9 : nothing");
                 break;
         }
         CausedByEvent = false;
