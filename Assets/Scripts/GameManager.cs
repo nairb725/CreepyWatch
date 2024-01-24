@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     private float _startTime, TimeLeft;
     private bool CausedByEvent;
-    private int AnomalyOccuring = 0;
+    public int AnomalyOccuring = 0;
     public bool TempAnomalyOccuring = false;
     public float AnomalyTime = 5.0f;
 
@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
             }
             GameoverCanvas.gameObject.SetActive(true);
         }
+        m_TimerText.text = "";
         StartCoroutine(SwitchScene(3f));
     }
 
