@@ -128,51 +128,23 @@ public class GameManager : MonoBehaviour
         switch (EventID)
         {
             case 1:
-                if (CheckScreen(GreenScreen))
-                {
-                    Debug.Log("called event 1 : green screen Off");
-                    ToggleScreen(GreenScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-                
+                Debug.Log("called event 1 : green screen Off");
+                ToggleScreen(GreenScreen);
+                break;
+
             case 2:
-                if (CheckScreen(RedScreen))
-                {
-                    Debug.Log("called event 2 : red screen Off");
-                    ToggleScreen(RedScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
-                    
+                Debug.Log("called event 1 : red screen Off");
+                ToggleScreen(RedScreen);
+                break;
+
             case 3:
-                if (CheckScreen(BlueScreen))
-                {
-                    Debug.Log("called event 2 : blue screen Off");
-                    ToggleScreen(BlueScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                Debug.Log("called event 1 : blue screen Off");
+                ToggleScreen(BlueScreen);
+                break;
             case 4:
-                if (CheckScreen(YellowScreen))
-                {
-                    Debug.Log("called event 2 : yellow screen Off");
-                    ToggleScreen(YellowScreen);
-                    break;
-                }
-                else
-                {
-                    break;
-                }
+                Debug.Log("called event 1 : yellow screen Off");
+                ToggleScreen(YellowScreen);
+                break;
             case 5:
                 Debug.Log("called event 5 : cold");
                 ToggleTempAnomaly(Random.Range(-33, -7));
