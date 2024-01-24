@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private bool CausedByEvent;
     private int AnomalyOccuring = 0;
     public bool TempAnomalyOccuring = false;
-    private float AnomalyTime = 5.0f;
+    public float AnomalyTime = 5.0f;
 
     [SerializeField]
     private Canvas GameoverCanvas;
