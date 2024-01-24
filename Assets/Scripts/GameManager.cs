@@ -260,7 +260,6 @@ public class GameManager : MonoBehaviour
 
     void RandomSound()
     {
-        Debug.Log("azeaze");
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }
