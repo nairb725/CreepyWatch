@@ -4,20 +4,18 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.Windows.Speech;
 using Valve.VR.InteractionSystem.Sample;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float _startTime;
+    private float _startTime, TimeLeft;
     private bool CausedByEvent;
     private int AnomalyOccuring = 0;
     public bool TempAnomalyOccuring = false;
-    private float AnomalyTime = 5.0f;
+    public float AnomalyTime = 5.0f;
 
     [SerializeField]
-    private Canvas GameoverCanvas;
-
-    [SerializeField]
-    private Canvas WinCanvas;
+    private Canvas WinCanvas, GameoverCanvas;
 
     [SerializeField]
     private TextMeshProUGUI Grade;
@@ -28,7 +26,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float TimerCountMax;
 
-    private float TimeLeft;
     [SerializeField]
     private bool _isTimer = true;
 
@@ -64,6 +61,11 @@ public class GameManager : MonoBehaviour
             UpdateTimerText();
 
             CheckTemp(_temperature.m_Temperature);
+
+            if (AnomalyOccuring < 0)
+            {
+                AnomalyOccuring = 0;
+            }
 
             if (AnomalyOccuring > 0)
             {
@@ -120,12 +122,23 @@ public class GameManager : MonoBehaviour
             {
                 Grade.text = "C";
             }
-            else if (TimeLeft > 3 * 60 && TimeLeft < 5 * 60)
+            else if (TimeLeft > 3 * 60 && TimeLeft < 4 * 60)
             {
                 Grade.text = "D";
             }
+            else if (TimeLeft > 4 * 60 && TimeLeft < 5 * 60)
+            {
+                Grade.text = "F";
+            }
             GameoverCanvas.gameObject.SetActive(true);
         }
+        StartCoroutine(SwitchScene(3f));
+    }
+
+    IEnumerator SwitchScene(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        SceneManager.LoadScene("main");
     }
 
     void RandomEvent()
@@ -191,34 +204,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool CheckScreen(GameObject screen)
-    {
-        if (screen == GreenScreen)
-        {
-            return GreenScreen.activeSelf;
-        }
-        else if (screen == RedScreen)
-        {
-            return RedScreen.activeSelf;
-        }
-        else if (screen == BlueScreen)
-        {
-            return BlueScreen.activeSelf;
-        }
-        else
-        {
-            return YellowScreen.activeSelf;
-        }
-    }
-
     public void ToggleTempAnomaly(float temp)
     {
-        if (TempAnomalyOccuring == false && CausedByEvent)
+        if (!TempAnomalyOccuring && CausedByEvent)
         {
             _temperature.m_Temperature = temp;
             AnomalyOccuring += 1;
         }
-        else
+        else if (TempAnomalyOccuring)
         {
             _temperature.m_Temperature = temp;
             AnomalyOccuring -= 1;
