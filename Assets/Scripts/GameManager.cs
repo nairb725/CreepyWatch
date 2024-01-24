@@ -41,8 +41,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public StickDirection stickDirection;
 
+    [SerializeField]
+    public TMP_Text TextInfoDead;
+
     void Start()
     {
+        WinCanvas.gameObject.SetActive(false);
+        GameoverCanvas.gameObject.SetActive(false);
         _startTime = Time.time;
         TimeLeft = TimerCountMax;
         Invoke("RandomEvent", Random.Range(5, 10));
@@ -51,9 +56,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(stickDirection._isRight);
-        Debug.Log(_arrowDirection._isRight);
-
         if (_isTimer && TimeLeft > 0)
         {
             TimeLeft = Mathf.Clamp(TimerCountMax - (Time.time - _startTime), 0f, TimerCountMax);
@@ -146,41 +148,46 @@ public class GameManager : MonoBehaviour
         float delay = Random.Range(10, 15);
         int EventID = Random.Range(1, 7);
         CausedByEvent = true;
-
         switch (EventID)
         {
             case 1:
                 Debug.Log("called event 1 : green screen Off");
                 ToggleScreen(GreenScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton vert à temps";
                 break;
 
             case 2:
                 Debug.Log("called event 1 : red screen Off");
                 ToggleScreen(RedScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton rouge à temps";
                 break;
 
             case 3:
                 Debug.Log("called event 1 : blue screen Off");
                 ToggleScreen(BlueScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton bleu à temps";
                 break;
             case 4:
                 Debug.Log("called event 1 : yellow screen Off");
                 ToggleScreen(YellowScreen);
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton jaune à temps";
                 break;
             case 5:
                 Debug.Log("called event 5 : cold");
                 ToggleTempAnomaly(Random.Range(-33, -7));
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 6:
                 Debug.Log("called event 6 : heat");
                 ToggleTempAnomaly(Random.Range(90, 120));
+                TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 8:
-                
-                Debug.Log("called event 7 : arrow");
+        Debug.Log("called event 8 : arrow");
+                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
                 break;
             case 9:
-                Debug.Log("called event 7 : nothing");
+                Debug.Log("called event 9 : rien");
                 break;
         }
         CausedByEvent = false;
