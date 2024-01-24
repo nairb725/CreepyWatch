@@ -178,26 +178,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool CheckScreen(GameObject screen)
-    {
-        if (screen == GreenScreen)
-        {
-            return GreenScreen.activeSelf;
-        }
-        else if (screen == RedScreen)
-        {
-            return RedScreen.activeSelf;
-        }
-        else if (screen == BlueScreen)
-        {
-            return BlueScreen.activeSelf;
-        }
-        else
-        {
-            return YellowScreen.activeSelf;
-        }
-    }
-
     public void ToggleTempAnomaly(float temp)
     {
         if (TempAnomalyOccuring == false && CausedByEvent)
