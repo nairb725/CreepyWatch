@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        WinCanvas.gameObject.SetActive(false);
+        GameoverCanvas.gameObject.SetActive(false);
         _startTime = Time.time;
         TimeLeft = TimerCountMax;
         Invoke("RandomEvent", Random.Range(5, 10));
