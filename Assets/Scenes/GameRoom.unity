@@ -522,6 +522,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1971580396}
+    - target: {fileID: 6332738515892938820, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6332738515892938820, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6931273079106409772, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 6.823395
@@ -532,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7585278129228149747, guid: 4869e86ca9188d44298576e3ac24994a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3020,7 +3028,6 @@ MonoBehaviour:
   AnomalyTime: 5
   WinCanvas: {fileID: 876270497}
   GameoverCanvas: {fileID: 1780253294}
-  colorCircle: {fileID: 13104551}
   Grade: {fileID: 714498498}
   m_TimerText: {fileID: 167218606}
   TimerCountMax: 300
@@ -10266,6 +10273,10 @@ PrefabInstance:
       propertyPath: urpControllerMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 70a2eb634d7ed434b86d36f190fcf3a1, type: 2}
+    - target: {fileID: 114000010591715100, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: clearanceCheckMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
