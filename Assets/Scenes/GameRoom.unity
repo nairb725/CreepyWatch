@@ -2968,6 +2968,7 @@ MonoBehaviour:
   AnomalyTime: 5
   WinCanvas: {fileID: 876270497}
   GameoverCanvas: {fileID: 1780253294}
+  colorCircle: {fileID: 13104551}
   Grade: {fileID: 714498498}
   m_TimerText: {fileID: 167218606}
   TimerCountMax: 300

@@ -54,9 +54,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(stickDirection._isRight);
-        Debug.Log(_arrowDirection._isRight);
-
         if (_isTimer && TimeLeft > 0)
         {
             TimeLeft = Mathf.Clamp(TimerCountMax - (Time.time - _startTime), 0f, TimerCountMax);
@@ -147,7 +144,7 @@ public class GameManager : MonoBehaviour
     void RandomEvent()
     {
         float delay = Random.Range(10, 15);
-        int EventID = Random.Range(1, 7);
+        int EventID = Random.Range(1, 9);
         CausedByEvent = true;
         switch (EventID)
         {
@@ -184,12 +181,12 @@ public class GameManager : MonoBehaviour
                 TextInfoDead.text = "You push didn't push the button to reset the tempeture";
                 break;
             case 8:
-        Debug.Log("called event 8 : arrow");
+            Debug.Log("called event 8 : arrow");
                 TextInfoDead.text = "You didn't switch the stick to the opposite side of the arrow";
                 break;
             case 9:
                 Debug.Log("called event 9 : nothing");
-                break;
+                break;            
         }
         CausedByEvent = false;
         if(_isTimer && TimeLeft > 0)
