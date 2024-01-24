@@ -11531,6 +11531,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "Contr\xF4leur Temp\xE9rature"
       objectReference: {fileID: 0}
+    - target: {fileID: 7451498985472884974, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: m_margin.x
+      value: -0.022873282
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451498985472884974, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
+      propertyPath: m_margin.z
+      value: -0.1263029
+      objectReference: {fileID: 0}
     - target: {fileID: 8327030999773815409, guid: 107946536421b824fb9dc302d43fb2f2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.292
