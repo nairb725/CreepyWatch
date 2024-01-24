@@ -12,13 +12,13 @@ public class VitalsController : MonoBehaviour
 
     private ParticleSystem ps;
     private ParticleSystem.VelocityOverLifetimeModule vel;
-    private ParticleSystem.MainModule main;
+    //private ParticleSystem.MainModule main;
     private AnimationCurve curve;
     // Start is called before the first frame update
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
-        main = ps.main;
+        //main = ps.main;
         vel = ps.velocityOverLifetime;
         vel.enabled = true;
         vel.space = ParticleSystemSimulationSpace.Local;
