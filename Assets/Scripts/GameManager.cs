@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("called event 7 : arrow");
                 _arrowDirection.ArrowPointing();
                 DisplayArrow();
-                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
+                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position de la flèche";
                 break;
             case 9:
                 Debug.Log("called event 8 : rien");
