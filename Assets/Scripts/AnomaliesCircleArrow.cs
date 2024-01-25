@@ -22,18 +22,20 @@ public class AnomaliesCircleArrow : MonoBehaviour
 
        int random = Random.Range(0, korner.Count);
        korner[random].SetActive(true);
+       
     }
-
-    // if the collider of the arrow touche the collider of the quarter make the quarter disappear
-    void OnTriggerEnter(Collider other)
+    
+    //This function will make the anomaliesCircleArrow disappear when the Arrow enter the collider of the anomaliesCircleArrow
+    void OnTriggerEnter(Collider collision)
     {
-        if (other.CompareTag("Arrow"))
+        Debug.Log("Quarter");
+        if (collision.gameObject.tag == "Quarter")
         {
+            Debug.Log("Quarter");
             gameObject.SetActive(false);
+            AnomaliesCircleArrowAppear();
         }
     }
-
-
 
 
 
