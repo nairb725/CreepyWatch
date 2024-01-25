@@ -1556,7 +1556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4544952225753211241, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4997012062740347692, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1696,6 +1696,11 @@ PrefabInstance:
 --- !u!224 &436041085 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7660582860855555703, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
+  m_PrefabInstance: {fileID: 436041084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &436041086 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7622565094817235368, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
   m_PrefabInstance: {fileID: 436041084}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &446020997
@@ -3729,6 +3734,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 52d192acb55d103499d3582ccae2a7bb, type: 3}
   - {fileID: 8300000, guid: a749f0eebadeffb43b7f8b49fadbab5d, type: 3}
   - {fileID: 8300000, guid: af256142acdf2834d8fa9c6cb1362fca, type: 3}
+  Rules: {fileID: 436041086}
+  timerDVD: {fileID: 2095754247}
 --- !u!4 &1007286837
 Transform:
   m_ObjectHideFlags: 0
@@ -12261,7 +12268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2095754248
 RectTransform:
   m_ObjectHideFlags: 0

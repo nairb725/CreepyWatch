@@ -52,13 +52,22 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private AudioClip[] audioSources;
 
+
+    [SerializeField]
+    public Canvas Rules;
+
+
+    [SerializeField]
+    public GameObject timerDVD;
+
     void Start()
     {
+        Invoke("displayDVD", 20);
         WinCanvas.gameObject.SetActive(false);
         GameoverCanvas.gameObject.SetActive(false);
         _startTime = Time.time;
         TimeLeft = TimerCountMax;
-        Invoke("RandomEvent", 10);
+        Invoke("RandomEvent", 20);
     }
 
     // Update is called once per frame
@@ -274,6 +283,10 @@ public class GameManager : MonoBehaviour
     }
 
    
-   
+   void displayDVD()
+    {
+        Rules.gameObject.SetActive(false);
+        timerDVD.gameObject.SetActive(true);
+    }
 
 }
