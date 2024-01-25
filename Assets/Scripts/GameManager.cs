@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
     {
         RandomSound();
         float delay = Random.Range(10, 15);
-        int EventID = Random.Range(7, 7);
+        int EventID = Random.Range(1, 9);
         CausedByEvent = true;
         switch (EventID)
         {
