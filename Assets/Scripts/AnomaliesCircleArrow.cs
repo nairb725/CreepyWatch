@@ -10,12 +10,6 @@ public class AnomaliesCircleArrow : MonoBehaviour
 
     public int One = 1;
 
-    // make the anomaliesCircleArrow in a start function but every 20 seconds
-    void Start()
-    {
-        InvokeRepeating("AnomaliesCircleArrowAppear", 20, 20);
-    }
-
     //This function will chose randomly one of the four quadrants and will make it appear on the screen but only ona at a time
     public void AnomaliesCircleArrowAppear()
     {
@@ -38,8 +32,6 @@ public class AnomaliesCircleArrow : MonoBehaviour
             Debug.Log("Quarter");
             collision.gameObject.SetActive(false);
             GameManager.AnomalyOccuring -= 1;
-            //Make the anomaliesCircleArrow appear again after 30 seconds
-            Invoke("AnomaliesCircleArrowAppear", 30);
         }
     }
 

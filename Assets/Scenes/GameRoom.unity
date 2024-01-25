@@ -3401,7 +3401,7 @@ MonoBehaviour:
   YellowScreen: {fileID: 454951752}
   _temperature: {fileID: 1092262426}
   _arrowDirection: {fileID: 859566850}
-  _anomaliesCircleArrow: {fileID: 0}
+  _anomaliesCircleArrow: {fileID: 1700089341}
   stickDirection: {fileID: 1214421613}
   TextInfoDead: {fileID: 677905714}
   randomSound: {fileID: 664492660}

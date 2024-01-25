@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         GameoverCanvas.gameObject.SetActive(false);
         _startTime = Time.time;
         TimeLeft = TimerCountMax;
-        Invoke("RandomEvent", Random.Range(5, 10));
+        Invoke("RandomEvent", 10);
     }
 
     // Update is called once per frame
