@@ -11,7 +11,7 @@ public class QuarterArrow : MonoBehaviour
 
     void Update()
     {
-        //get the Y rotation of the rotator and use it to change the rotation of the Z axis of the arrow
-        arrow.transform.rotation = Quaternion.Euler(0, 60, rotator.transform.rotation.eulerAngles.y);
+        //get the -Y rotation of the rotator and use it to change the rotation of the Z axis of the arrow
+        arrow.transform.rotation = Quaternion.Euler(0, 60, -rotator.transform.rotation.eulerAngles.y);
     }
 }

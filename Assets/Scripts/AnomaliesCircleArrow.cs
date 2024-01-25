@@ -9,7 +9,7 @@ public class AnomaliesCircleArrow : MonoBehaviour
     // make the anomaliesCircleArrow in a start function but every 20 seconds
     void Start()
     {
-        InvokeRepeating("AnomaliesCircleArrowAppear", 20, 20);
+        InvokeRepeating("AnomaliesCircleArrowAppear", 5, 5);
     }
 
     //This function will chose randomly one of the four quadrants and will make it appear on the screen but only ona at a time
@@ -22,18 +22,20 @@ public class AnomaliesCircleArrow : MonoBehaviour
 
        int random = Random.Range(0, korner.Count);
        korner[random].SetActive(true);
+       
     }
-
-    // if the collider of the arrow touche the collider of the quarter make the quarter disappear
-    void OnTriggerEnter(Collider other)
+    
+    //This function will make the anomaliesCircleArrow disappear when the Arrow enter the collider of the anomaliesCircleArrow
+    void OnTriggerEnter(Collider collision)
     {
-        if (other.CompareTag("Arrow"))
+        Debug.Log("Quarter");
+        if (collision.gameObject.tag == "Quarter")
         {
-            gameObject.SetActive(false);
+            Debug.Log("Quarter");
+            collision.gameObject.SetActive(false);
+            AnomaliesCircleArrowAppear();
         }
     }
-
-
 
 
 
