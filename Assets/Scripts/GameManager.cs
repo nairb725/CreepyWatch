@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                AnomalyTime = 5.0f;
+                AnomalyTime = 8.0f;
             }
         }
         if (TimeLeft <= 0)
