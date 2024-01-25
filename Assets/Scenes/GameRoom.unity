@@ -3189,7 +3189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRight: 0
-  integers: 00000000b4000000
 --- !u!223 &876270497 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 7622565094817235368, guid: 01f2fb1d8de6be04688077008c7c382f, type: 3}
@@ -3937,6 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRight: 0
+  _gameManager: {fileID: 1007286836}
 --- !u!4 &1247588147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1b30ab1b3350594ca87ab6a960bc262, type: 3}
@@ -12175,8 +12175,20 @@ PrefabInstance:
       value: Switch
       objectReference: {fileID: 0}
     - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: maxAngle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: minAngle
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: forceStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
       propertyPath: startAngle
-      value: -30
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
       propertyPath: axisOfRotation
