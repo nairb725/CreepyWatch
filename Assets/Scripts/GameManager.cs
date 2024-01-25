@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
     {
         RandomSound();
         float delay = Random.Range(10, 15);
-        int EventID = Random.Range(7, 9);
+        int EventID = Random.Range(8, 8);
         CausedByEvent = true;
         switch (EventID)
         {
@@ -190,7 +190,8 @@ public class GameManager : MonoBehaviour
                 break;
             case 8:
         Debug.Log("called event 8 : arrow");
-                DisplayArrow();
+                _arrowDirection.ArrowPointing();
+                Invoke("DisplayArrow", 5.0f);
                 TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
                 break;
             case 9:
@@ -208,12 +209,10 @@ public class GameManager : MonoBehaviour
     {
         if (_arrowDirection._isRight == stickDirection._isRight)
         {
-            Debug.Log("win");
             AnomalyOccuring += -1;
         }
         else
         {
-            Debug.Log("lose");
             AnomalyOccuring += +1;
         }
     }
