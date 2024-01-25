@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
     {
         RandomSound();
         float delay = Random.Range(10, 15);
-        int EventID = Random.Range(8, 8);
+        int EventID = Random.Range(1, 9);
         CausedByEvent = true;
         switch (EventID)
         {
@@ -193,18 +193,18 @@ public class GameManager : MonoBehaviour
                 TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
             case 7:
-                Debug.Log("called event 7 : nothing");
+                Debug.Log("called event 7 : Quarter Arrow");
                 TextInfoDead.text = "Vous n'avez pas tourné le bouton pour réinitialiser le quadrant vert";
                 _anomaliesCircleArrow.AnomaliesCircleArrowAppear();
                 break;
             case 8:
-                Debug.Log("called event 7 : arrow");
+                Debug.Log("called event 8 : arrow");
                 _arrowDirection.ArrowPointing();
                 DisplayArrow();
                 TextInfoDead.text = "Vous n'avez pas mis le levier dans la position de la flèche";
                 break;
             case 9:
-                Debug.Log("called event 8 : rien");
+                Debug.Log("called event 9 : rien");
                 break;
         }
         CausedByEvent = false;
@@ -273,6 +273,7 @@ public class GameManager : MonoBehaviour
         randomSound.Play();
     }
 
+   
    
 
 }

@@ -6,6 +6,10 @@ public class AnomaliesCircleArrow : MonoBehaviour
 {
     public List<GameObject> korner;
 
+    public GameManager GameManager;
+
+    public int One = 1;
+
     // make the anomaliesCircleArrow in a start function but every 20 seconds
     void Start()
     {
@@ -22,7 +26,7 @@ public class AnomaliesCircleArrow : MonoBehaviour
 
        int random = Random.Range(0, korner.Count);
        korner[random].SetActive(true);
-       GameManager.Instance.AnomalyOccuring +=1;
+       GameManager.AnomalyOccuring += 1;
     }
     
     //This function will make the anomaliesCircleArrow disappear when the Arrow enter the collider of the anomaliesCircleArrow
@@ -33,7 +37,7 @@ public class AnomaliesCircleArrow : MonoBehaviour
         {
             Debug.Log("Quarter");
             collision.gameObject.SetActive(false);
-            GameManager.Instance.AnomalyOccuring -=1;
+            GameManager.AnomalyOccuring -= 1;
             //Make the anomaliesCircleArrow appear again after 30 seconds
             Invoke("AnomaliesCircleArrowAppear", 30);
         }
