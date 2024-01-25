@@ -198,13 +198,13 @@ public class GameManager : MonoBehaviour
                 _anomaliesCircleArrow.AnomaliesCircleArrowAppear();
                 break;
             case 8:
-        Debug.Log("called event 8 : arrow");
+                Debug.Log("called event 7 : arrow");
                 _arrowDirection.ArrowPointing();
-                Invoke("DisplayArrow", 5.0f);
-                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position opposée à la flèche";
+                DisplayArrow();
+                TextInfoDead.text = "Vous n'avez pas mis le levier dans la position de la flèche";
                 break;
             case 9:
-                Debug.Log("called event 9 : rien");
+                Debug.Log("called event 8 : rien");
                 break;
         }
         CausedByEvent = false;
@@ -218,11 +218,11 @@ public class GameManager : MonoBehaviour
     {
         if (_arrowDirection._isRight == stickDirection._isRight)
         {
-            AnomalyOccuring += -1;
+            AnomalyOccuring -= 1;
         }
         else
         {
-            AnomalyOccuring += +1;
+            AnomalyOccuring += 1;
         }
     }
 

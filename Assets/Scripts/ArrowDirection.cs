@@ -9,23 +9,23 @@ public class ArrowDirection : MonoBehaviour
 
     private RectTransform rt;
 
-    [SerializeField]
-    private int[] integers;
+    private void Start()
+    {
+        _isRight = true;
+    }
 
     public void ArrowPointing()
     {
-        integers[0] = 180;
-        integers[1] = 0;
         rt = GetComponent<RectTransform>();
-        var direction = integers[Random.Range(0, 2)];
-        rt.Rotate(Vector3.up, direction);
         if(rt.transform.localRotation.y == 0)
         {
-            _isRight = true;
+            rt.Rotate(Vector3.up, 180);
+            _isRight = false;
         }
         else
         {
-            _isRight = false;
+            rt.Rotate(Vector3.up, -180);
+            _isRight = true;
         }   
     }
 }
