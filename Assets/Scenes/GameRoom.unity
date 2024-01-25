@@ -12175,8 +12175,20 @@ PrefabInstance:
       value: Switch
       objectReference: {fileID: 0}
     - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: maxAngle
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: minAngle
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
+      propertyPath: forceStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
       propertyPath: startAngle
-      value: -30
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5527858295112936606, guid: 00cf86de0834c7d43bbbc51ebc4bbb4f, type: 3}
       propertyPath: axisOfRotation
