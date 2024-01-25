@@ -8,14 +8,30 @@ public class StickDirection : MonoBehaviour
     [SerializeField]
     public bool _isRight;
 
-    public void Right()
+    [SerializeField]
+    private GameManager _gameManager;
+
+    public void Start()
     {
         _isRight = true;
     }
 
+    public void Right()
+    {
+        if (!_isRight)
+        {
+            _isRight = true;
+            _gameManager.DisplayArrow();
+        }
+    }
+
     public void Left()
     {
-        _isRight = false;
+        if (_isRight)
+        {
+            _isRight = false;
+            _gameManager.DisplayArrow();
+        }
     }
 
 }
