@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool TempAnomalyOccuring = false;
     public float AnomalyTime = 5.0f;
 
+    public static GameManager Instance;
+
     [SerializeField]
     private Canvas WinCanvas, GameoverCanvas;
 
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public ArrowDirection _arrowDirection;
+
+    public AnomaliesCircleArrow _anomaliesCircleArrow;
 
     [SerializeField]
     public StickDirection stickDirection;
@@ -188,6 +192,11 @@ public class GameManager : MonoBehaviour
                 ToggleTempAnomaly(Random.Range(90, 120));
                 TextInfoDead.text = "Vous n'avez pas pressez le bouton pour réinitialiser la température";
                 break;
+            case 7:
+                Debug.Log("called event 7 : nothing");
+                TextInfoDead.text = "Vous n'avez pas tourné le bouton pour réinitialiser le quadrant vert";
+                _anomaliesCircleArrow.AnomaliesCircleArrowAppear();
+                break;
             case 8:
         Debug.Log("called event 8 : arrow");
                 _arrowDirection.ArrowPointing();
@@ -216,6 +225,7 @@ public class GameManager : MonoBehaviour
             AnomalyOccuring += +1;
         }
     }
+
 
     public void ToggleScreen(GameObject screen)
     {
@@ -262,4 +272,7 @@ public class GameManager : MonoBehaviour
         randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
         randomSound.Play();
     }
+
+   
+
 }
