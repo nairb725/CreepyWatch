@@ -222,7 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 22725906}
-  - component: {fileID: 22725907}
   m_Layer: 5
   m_Name: GraphContainer
   m_TagString: Untagged
@@ -255,23 +254,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2, y: 1}
   m_SizeDelta: {x: 4, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &22725907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22725905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 598ef1dd7f4e82f418b1bd50e87d66e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  korner:
-  - {fileID: 1162358874}
-  - {fileID: 529826389}
-  - {fileID: 2023327911}
-  - {fileID: 1920978326}
 --- !u!1 &49037857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1953,7 @@ GameObject:
   - component: {fileID: 529826392}
   - component: {fileID: 529826391}
   - component: {fileID: 529826393}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuarterHG
   m_TagString: Quarter
   m_Icon: {fileID: 0}
@@ -3590,7 +3572,7 @@ GameObject:
   - component: {fileID: 1162358877}
   - component: {fileID: 1162358876}
   - component: {fileID: 1162358878}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuarterHD
   m_TagString: Quarter
   m_Icon: {fileID: 0}
@@ -4400,8 +4382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightOB: {fileID: 1417909514}
   LightBlinking: {fileID: 1417909515}
-  mintime: 0.1
-  maxtime: 1.2
+  mintime: 1
+  maxtime: 15
   timer: 0
 --- !u!1 &1486007875
 GameObject:
@@ -10187,7 +10169,9 @@ GameObject:
   - component: {fileID: 1700089339}
   - component: {fileID: 1700089338}
   - component: {fileID: 1700089340}
-  m_Layer: 5
+  - component: {fileID: 1700089341}
+  - component: {fileID: 1700089342}
+  m_Layer: 0
   m_Name: ArrowB
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -10266,12 +10250,56 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.12876713, y: 0.16321333, z: 1.3941001}
   m_Center: {x: -0.001445454, y: 0.47815418, z: -0.69821095}
+--- !u!114 &1700089341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700089336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598ef1dd7f4e82f418b1bd50e87d66e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  korner:
+  - {fileID: 1162358874}
+  - {fileID: 529826389}
+  - {fileID: 2023327911}
+  - {fileID: 1920978326}
+--- !u!54 &1700089342
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700089336}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1745747527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10932,7 +10960,7 @@ GameObject:
   - component: {fileID: 1920978329}
   - component: {fileID: 1920978328}
   - component: {fileID: 1920978330}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuarterBD
   m_TagString: Quarter
   m_Icon: {fileID: 0}
@@ -11299,7 +11327,7 @@ GameObject:
   - component: {fileID: 2023327914}
   - component: {fileID: 2023327913}
   - component: {fileID: 2023327915}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuarterBG
   m_TagString: Quarter
   m_Icon: {fileID: 0}
